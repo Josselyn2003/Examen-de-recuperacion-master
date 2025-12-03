@@ -1,0 +1,70 @@
+<div class="container-fluid">
+  <div class="row mb-4">
+    <div class="col-lg-8">
+      <h1 class="mb-2">Servicios de Construcción, Remodelación y Acabados</h1>
+      <p class="text-muted mb-0">
+        Administra clientes, proyectos, personal, materiales, cotizaciones, órdenes de trabajo y pagos
+        desde un solo lugar.
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-7 mb-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-header">
+          Resumen rápido
+        </div>
+        <div class="card-body">
+          <p class="mb-1">
+            Desde el menú de la izquierda puedes:
+          </p>
+          <ul class="mb-2">
+            <li>Registrar y listar <strong>clientes</strong>.</li>
+            <li>Crear <strong>cotizaciones</strong> y asociarlas a proyectos.</li>
+            <li>Gestionar <strong>materiales</strong> y <strong>personal</strong>.</li>
+            <li>Registrar <strong>órdenes de trabajo</strong> y <strong>pagos</strong>.</li>
+          </ul>
+          <p class="text-muted mb-0">
+            Usa las opciones del sidebar para empezar a registrar información.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-5 mb-4">
+      <div class="card shadow-sm">
+        <div class="card-header">
+          Registrar mensaje rápido
+        </div>
+        <div class="card-body">
+          <form action="/inicio" method="POST">
+            <div class="form-group">
+              <label for="mensaje">Título / mensaje</label>
+              <input type="text"
+                     id="mensaje"
+                     name="mensaje"
+                     class="form-control"
+                     placeholder="Ej. Nueva remodelación de cocina"
+                     required>
+            </div>
+
+            <div class="form-group">
+              <label for="descripcion">Descripción</label>
+              <textarea id="descripcion"
+                        name="descripcion"
+                        class="form-control"
+                        rows="4"
+                        placeholder="Detalles generales de la solicitud o proyecto"
+                        required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+              <i class="bi bi-send"></i> Guardar mensaje
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

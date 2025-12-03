@@ -1,0 +1,68 @@
+<div class="container-fluid">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>Nuevo cliente</h2>
+    <a href="/cliente/listar" class="btn btn-outline-secondary btn-sm">
+      <i class="bi bi-arrow-left"></i> Volver al listado
+    </a>
+  </div>
+
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <form action="/cliente/agregar" method="POST">
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label for="cedula">Cédula</label>
+            <input type="text"
+                   id="cedula"
+                   name="cedula"
+                   class="form-control"
+                   maxlength="10"
+                   required>
+          </div>
+
+          <div class="form-group col-md-8">
+            <label for="nombre">Nombres</label>
+            <input type="text"
+                   id="nombre"
+                   name="nombre"
+                   class="form-control"
+                   required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label for="telefono">Teléfono</label>
+            <input type="text"
+                   id="telefono"
+                   name="telefono"
+                   class="form-control"
+                   required>
+          </div>
+
+          <div class="form-group col-md-4">
+            <label for="correoelectronico">Correo electrónico</label>
+            <input type="email"
+                   id="correoelectronico"
+                   name="correoelectronico"
+                   class="form-control"
+                   required>
+          </div>
+
+          <div class="form-group col-md-4">
+            <label for="direccion">Dirección</label>
+            <input type="text"
+                   id="direccion"
+                   name="direccion"
+                   class="form-control"
+                   required>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+          <i class="bi bi-save"></i> Guardar
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

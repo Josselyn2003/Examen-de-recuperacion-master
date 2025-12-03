@@ -1,0 +1,52 @@
+<div class="container-fluid">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>Pagos</h2>
+    <a href="/pago/agregar" class="btn btn-primary btn-sm">
+      <i class="bi bi-plus-circle"></i> Nuevo pago
+    </a>
+  </div>
+
+  <div class="card shadow-sm">
+    <div class="card-body table-responsive">
+      <table class="table table-striped table-hover mb-0">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Fecha</th>
+            <th>Monto</th>
+            <th>Método</th>
+            <th class="text-right">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#if lista.length}}
+            {{#each lista}}
+              <tr>
+                <td>{{id_pago}}</td>
+                <td>{{fecha_pago}}</td>
+                <td>{{monto}}</td>
+                <td>{{metodo_pago}}</td>
+                <td class="text-right">
+                  <a href="/pago/editar/{{id_pago}}" class="btn btn-sm btn-outline-secondary">
+                    <i class="bi bi-pencil"></i> Editar
+                  </a>
+                  <a href="/pago/eliminar/{{id_pago}}"
+                     class="btn btn-sm btn-outline-danger"
+                     onclick="return confirm('¿Seguro que deseas eliminar este pago?');">
+                    <i class="bi bi-trash"></i> Eliminar
+                  </a>
+                </td>
+              </tr>
+            {{/each}}
+          {{else}}
+            <tr>
+              <td colspan="5" class="text-center text-muted">
+                No hay pagos registrados.
+              </td>
+            </tr>
+          {{/if}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

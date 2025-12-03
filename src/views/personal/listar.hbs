@@ -1,0 +1,54 @@
+<div class="container-fluid">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>Personal</h2>
+    <a href="/personal/agregar" class="btn btn-primary btn-sm">
+      <i class="bi bi-plus-circle"></i> Nuevo personal
+    </a>
+  </div>
+
+  <div class="card shadow-sm">
+    <div class="card-body table-responsive">
+      <table class="table table-striped table-hover mb-0">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Especialidad</th>
+            <th>Teléfono</th>
+            <th>Costo/hora</th>
+            <th class="text-right">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#if lista.length}}
+            {{#each lista}}
+              <tr>
+                <td>{{id_personal}}</td>
+                <td>{{nombre_personal}}</td>
+                <td>{{especialidad}}</td>
+                <td>{{telefono_personal}}</td>
+                <td>{{costo_hora}}</td>
+                <td class="text-right">
+                  <a href="/personal/editar/{{id_personal}}" class="btn btn-sm btn-outline-secondary">
+                    <i class="bi bi-pencil"></i> Editar
+                  </a>
+                  <a href="/personal/eliminar/{{id_personal}}"
+                     class="btn btn-sm btn-outline-danger"
+                     onclick="return confirm('¿Seguro que deseas eliminar este registro?');">
+                    <i class="bi bi-trash"></i> Eliminar
+                  </a>
+                </td>
+              </tr>
+            {{/each}}
+          {{else}}
+            <tr>
+              <td colspan="6" class="text-center text-muted">
+                No hay personal registrado.
+              </td>
+            </tr>
+          {{/if}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

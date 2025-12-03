@@ -1,0 +1,54 @@
+<div class="container-fluid">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>Editar material</h2>
+    <a href="/material/listar" class="btn btn-outline-secondary btn-sm">
+      <i class="bi bi-arrow-left"></i> Volver al listado
+    </a>
+  </div>
+
+  {{#each lista}}
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <form action="/material/editar/{{id_material}}" method="POST">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="nombre_material">Nombre del material</label>
+            <input type="text"
+                   id="nombre_material"
+                   name="nombre_material"
+                   class="form-control"
+                   value="{{nombre_material}}"
+                   required>
+          </div>
+
+          <div class="form-group col-md-3">
+            <label for="cantidad">Cantidad</label>
+            <input type="number"
+                   id="cantidad"
+                   name="cantidad"
+                   class="form-control"
+                   value="{{cantidad}}"
+                   min="0"
+                   required>
+          </div>
+
+          <div class="form-group col-md-3">
+            <label for="costo_unitario">Costo unitario</label>
+            <input type="number"
+                   step="0.01"
+                   id="costo_unitario"
+                   name="costo_unitario"
+                   class="form-control"
+                   value="{{costo_unitario}}"
+                   required>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+          <i class="bi bi-save"></i> Actualizar
+        </button>
+      </form>
+    </div>
+  </div>
+  {{/each}}
+</div>

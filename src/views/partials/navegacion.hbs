@@ -1,0 +1,73 @@
+<input type="checkbox" id="sidebar-toggle" class="sidebar-toggle">
+
+<label for="sidebar-toggle" class="menu-icon">
+  <i class="fas fa-bars"></i>
+</label>
+
+<aside class="sidebar">
+  <div class="sidebar-header">
+    <h3 class="mb-0">Servicios de Construcción</h3>
+    <small>Sistema Web</small>
+  </div>
+
+  <div class="sidebar-user mt-3">
+    <div class="sidebar-avatar">
+      <i class="fas fa-user"></i>
+    </div>
+    <div>
+      <div class="sidebar-user-name">{{#if user}}{{user.usernameClient}}{{else}}Invitado{{/if}}</div>
+      <div class="sidebar-user-email">{{#if user}}{{user.emailClient}}{{else}}usuario@correo.com{{/if}}</div>
+    </div>
+  </div>
+
+  <nav class="sidebar-menu mt-4">
+    <span class="sidebar-section-title">Principal</span>
+    <a href="/inicio" class="sidebar-link">
+      <i class="bi bi-house-door"></i>
+      <span>Inicio</span>
+    </a>
+
+    <span class="sidebar-section-title">Gestión</span>
+    <a href="/cliente/listar" class="sidebar-link">
+      <i class="bi bi-people"></i>
+      <span>Clientes</span>
+    </a>
+    <a href="/cotizacion/listar" class="sidebar-link">
+      <i class="bi bi-file-earmark-text"></i>
+      <span>Cotizaciones</span>
+    </a>
+    <a href="/material/listar" class="sidebar-link">
+      <i class="bi bi-box-seam"></i>
+      <span>Materiales</span>
+    </a>
+    <a href="/orden_trabajo/listar" class="sidebar-link">
+      <i class="bi bi-clipboard-check"></i>
+      <span>Órdenes de trabajo</span>
+    </a>
+    <a href="/pago/listar" class="sidebar-link">
+      <i class="bi bi-cash-stack"></i>
+      <span>Pagos</span>
+    </a>
+    <a href="/personal/listar" class="sidebar-link">
+      <i class="bi bi-person-badge"></i>
+      <span>Personal</span>
+    </a>
+    <a href="/proyecto/listar" class="sidebar-link">
+      <i class="bi bi-building"></i>
+      <span>Proyectos</span>
+    </a>
+
+    <span class="sidebar-section-title">Cuenta</span>
+    {{#if user}}
+      <a href="/CerrarSecion" class="sidebar-link">
+        <i class="bi bi-box-arrow-right"></i>
+        <span>Cerrar sesión</span>
+      </a>
+    {{else}}
+      <a href="/login" class="sidebar-link">
+        <i class="bi bi-box-arrow-in-right"></i>
+        <span>Iniciar sesión</span>
+      </a>
+    {{/if}}
+  </nav>
+</aside>
